@@ -1,7 +1,7 @@
 # WhiteStar
 
-[![Coverage Status](https://coveralls.io/repos/github/bionikspoon/white_star/badge.svg?branch=master)](https://coveralls.io/github/bionikspoon/white_star?branch=master)
-[![Build Status](https://travis-ci.org/bionikspoon/white_star.svg?branch=master)](https://travis-ci.org/bionikspoon/white_star)
+[![Coverage Status](https://coveralls.io/repos/github/bionikspoon/white_star/badge.svg?branch=develop)](https://coveralls.io/github/bionikspoon/white_star?branch=develop)
+[![Build Status](https://travis-ci.org/bionikspoon/white_star.svg?branch=develop)](https://travis-ci.org/bionikspoon/white_star)
 
 To start your Phoenix server:
 
