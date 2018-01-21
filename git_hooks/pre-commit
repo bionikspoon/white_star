@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+echo "mix format --check-formatted"
+mix format --check-formatted &
+wait $!
+
+echo "mix credo"
+mix credo &
+wait $!

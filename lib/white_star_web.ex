@@ -28,8 +28,9 @@ defmodule WhiteStarWeb do
 
   def view do
     quote do
-      use Phoenix.View, root: "lib/white_star_web/templates",
-                        namespace: WhiteStarWeb
+      use Phoenix.View,
+        root: "lib/white_star_web/templates",
+        namespace: WhiteStarWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 2, view_module: 1]

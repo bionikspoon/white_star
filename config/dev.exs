@@ -40,7 +40,9 @@ config :phoenix, :stacktrace_depth, 20
 config :white_star, WhiteStar.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "postgres",
+  password: "",
   database: "white_star_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :mix_test_watch, tasks: ["test", "credo"]

@@ -1,5 +1,7 @@
 defmodule WhiteStar.Application do
+  @moduledoc false
   use Application
+  alias WhiteStarWeb.Endpoint
 
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
@@ -11,7 +13,7 @@ defmodule WhiteStar.Application do
       # Start the Ecto repository
       supervisor(WhiteStar.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(WhiteStarWeb.Endpoint, []),
+      supervisor(WhiteStarWeb.Endpoint, [])
       # Start your own worker by calling: WhiteStar.Worker.start_link(arg1, arg2, arg3)
       # worker(WhiteStar.Worker, [arg1, arg2, arg3]),
     ]
@@ -25,7 +27,7 @@ defmodule WhiteStar.Application do
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    WhiteStarWeb.Endpoint.config_change(changed, removed)
+    Endpoint.config_change(changed, removed)
     :ok
   end
 end

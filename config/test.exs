@@ -13,7 +13,7 @@ config :logger, level: :warn
 config :white_star, WhiteStar.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "postgres",
+  password: "",
   database: "white_star_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

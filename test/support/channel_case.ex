@@ -14,6 +14,7 @@ defmodule WhiteStarWeb.ChannelCase do
   """
 
   use ExUnit.CaseTemplate
+  alias Ecto.Adapters.SQL.Sandbox
 
   using do
     quote do
@@ -25,13 +26,13 @@ defmodule WhiteStarWeb.ChannelCase do
     end
   end
 
-
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(WhiteStar.Repo)
+    :ok = Sandbox.checkout(WhiteStar.Repo)
+
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(WhiteStar.Repo, {:shared, self()})
+      Sandbox.mode(WhiteStar.Repo, {:shared, self()})
     end
+
     :ok
   end
-
 end

@@ -1,0 +1,10 @@
+sudo: required
+language: elixir
+elixir: '1.6.0'
+env:
+  global:
+    - MIX_ENV=test
+before_script:
+  - mix format --check-formatted
+  - mix credo
+script: mix coveralls.travis

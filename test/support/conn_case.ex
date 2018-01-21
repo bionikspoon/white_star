@@ -14,11 +14,13 @@ defmodule WhiteStarWeb.ConnCase do
   """
 
   use ExUnit.CaseTemplate
+  alias Ecto.Adapters.SQL.Sandbox
+  alias Phoenix.ConnTest
 
   using do
     quote do
       # Import conveniences for testing with connections
-      use Phoenix.ConnTest
+      use ConnTest
       import WhiteStarWeb.Router.Helpers
 
       # The default endpoint for testing
@@ -26,13 +28,13 @@ defmodule WhiteStarWeb.ConnCase do
     end
   end
 
-
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(WhiteStar.Repo)
-    unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(WhiteStar.Repo, {:shared, self()})
-    end
-    {:ok, conn: Phoenix.ConnTest.build_conn()}
-  end
+    :ok = Sandbox.checkout(WhiteStar.Repo)
 
+    unless tags[:async] do
+      Sandbox.mode(WhiteStar.Repo, {:shared, self()})
+    end
+
+    {:ok, conn: ConnTest.build_conn()}
+  end
 end
